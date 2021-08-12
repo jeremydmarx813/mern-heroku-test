@@ -13,7 +13,7 @@ const Dashboard = () => {
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.results)
+        // console.log(res.results)
         setTickers(res.results);
       })
       .catch(err => console.error(err));
