@@ -13,12 +13,14 @@ const Dashboard = () => {
     )
       .then((res) => res.json())
       .then((res) => {
+        console.log(res.results)
         setTickers(res.results);
       })
       .catch(err => console.error(err));
   }, []);
   return (
-    <div>
+    <div className="flexCenteredDiv" >
+      <h2>Highlighted ETFs</h2>
       {tickers.length &&
         tickers.map((e) => {
           return <EtfComponent key={uuidv4()} data={e} />;
