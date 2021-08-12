@@ -8,9 +8,12 @@ const mode = process.env.MODE;
 
 if (mode === "development") {
   morgan("dev");
-} else {
+} 
+if(mode === "production") {
+  console.log('production test');
   app.use(express.static(path.resolve(__dirname, "./client/build")));
-  app.get("*", (request, response) => {
+  app.get("*", (req, res) => {
+    console.log('req: ', req)
     response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
   });
 }
