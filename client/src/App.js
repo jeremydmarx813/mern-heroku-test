@@ -1,14 +1,13 @@
 // import logo from './logo.svg';
 import './App.css';
-import SearchBar from './SearchBar';
+import Dashboard from './Dashboard';
 
 
 function App() {
-  
   return (
     <div className="App">
-      <h1>SearchBar</h1>
-      <SearchBar />
+      <h1>Spotlighted ETFs</h1>
+      <Dashboard />
     </div>
   );
 }
