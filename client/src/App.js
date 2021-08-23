@@ -1,10 +1,11 @@
 // import logo from './logo.svg';
 import "./App.css";
 import Dashboard from "./Dashboard";
+import { Container } from "@material-ui/core";
 
 const App = () => {
   return (
-    <div className="App flexCenteredDiv">
+    <Container >
       <header>
         <h1>Daily Stock Highlights</h1>
       </header>
@@ -13,8 +14,8 @@ const App = () => {
         information from Poylygon.io.
       </p>
       <Dashboard />
-    </div>
+    </Container>
   );
-}
+};
 
 export default App;
