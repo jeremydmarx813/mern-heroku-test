@@ -5,7 +5,7 @@ import { Container } from "@material-ui/core";
 
 const App = () => {
   return (
-    <Container >
+    <Container fixed>
       <header>
         <h1>Daily Stock Highlights</h1>
       </header>

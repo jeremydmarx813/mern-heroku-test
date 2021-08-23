@@ -7,13 +7,11 @@ const port = process.env.PORT;
 const mode = process.env.MODE;
 
 if (mode === "development") {
-  morgan("dev");
+  app.use(morgan("dev"));
 } 
 if(mode === "production") {
-  console.log('production test');
   app.use(express.static(path.resolve(__dirname, "./client/build")));
   app.get("*", (req, res) => {
-    console.log('req: ', req)
     response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
   });
 }

@@ -19,7 +19,7 @@ const Dashboard = () => {
       .catch(err => console.error(err));
   }, []);
   return (
-    <div className="flexCenteredDiv" >
+    <div>
       <h2>Highlighted ETFs</h2>
       {tickers.length &&
         tickers.map((e) => {
