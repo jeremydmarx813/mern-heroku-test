@@ -1,14 +1,27 @@
-import React from 'react'
+import React from "react";
+import {
+  Card,
+  CardContent,
+  makeStyles,
+  Typography,
+  ThemeProvider,
+  createTheme,
+  Box,
+  CardHeader,
+} from "@material-ui/core";
 
-const EtfComponent = ({data}) => {
-    const { name, ticker, locale, primary_exchange } = data;
-    return (
-        <div>
-            <h2>{name} ({ticker})</h2>
-            <h3>Country: {locale.toUpperCase()}</h3>
-            <p>Primary Exchange: {primary_exchange}</p>
-        </div>
-    )
-}
+const EtfComponent = ({ data }) => {
+  const { name, ticker, locale, primary_exchange } = data;
+
+  return (
+    <Card elevation={3}>
+      <CardHeader title={name} subheader={ticker} />
+      <CardContent varianr="body2" color="secondary">
+        <Typography>Country: {locale.toUpperCase()}</Typography>
+        <Typography>Primary Exchange: {primary_exchange}</Typography>
+      </CardContent>
+    </Card>
+  );
+};
 
 export default EtfComponent;

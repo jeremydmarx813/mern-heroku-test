@@ -1,7 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import EtfComponent from './EtfComponent';
+import EtfComponent from "./EtfComponent";
+import { Box, Typography } from "@material-ui/core";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -16,16 +17,16 @@ const Dashboard = () => {
         // console.log(res.results)
         setTickers(res.results);
       })
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   }, []);
   return (
-    <div>
-      <h2>Highlighted ETFs</h2>
+    <Box sx={{ minWidth: 275 }}>
+      <Typography>Highlighted ETFs</Typography>
       {tickers.length &&
         tickers.map((e) => {
           return <EtfComponent key={uuidv4()} data={e} />;
         })}
-    </div>
+    </Box>
   );
 };
 
